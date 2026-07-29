@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>الاستعلام عن النتيجة</title>
+<style>
+body{margin:0;background:#f3f3f3;font-family:Tahoma,Arial}
+.header{background:#8b0000;color:#fff;padding:20px;text-align:center;font-size:28px;font-weight:bold}
+.box{width:90%;max-width:500px;margin:30px auto;background:#fff;padding:25px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,.15)}
+input{width:100%;padding:15px;font-size:18px;border:1px solid #ccc;border-radius:10px;box-sizing:border-box}
+button{margin-top:15px;width:100%;padding:15px;font-size:20px;background:#8b0000;color:#fff;border:none;border-radius:10px;cursor:pointer}
+.card{display:none;margin-top:25px;background:#666;color:#fff;padding:25px;border-radius:18px;text-align:center}
+.big{font-size:48px;font-weight:bold}.small{font-size:22px;color:#ddd}
+.whitecard{display:none;margin-top:20px;background:#fff;padding:18px;border-radius:12px;font-size:22px;text-align:center;border:1px solid #ddd;margin-bottom:15px}
+</style></head>
+<body>
+<div class="header">الاستعلام عن النتيجة</div>
+<div class="box">
+<input id="name" placeholder="أدخل اسم صاحب النتيجة">
+<button onclick="searchResult()">بحث</button>
+<div class="card" id="card">
+<div class="small">النسبة المئوية</div><div class="big">42.03%</div>
+<div class="small">مجموع الدرجات</div><div class="big">134.50 / 320</div>
+</div>
+<div class="whitecard" id="info1">الاسم<br>محمد السيد أحمد المهدي</div>
+<div class="whitecard" id="info2">حالة الطالب<br>دور ثانٍ</div>
+<div class="whitecard" id="info3">عرض النتيجة الكاملة</div>
+</div>
+<script>
+function searchResult(){
+let x=document.getElementById("name").value.trim();
+if(x==="محمد السيد أحمد المهدي"){
+["card","info1","info2","info3"].forEach(id=>document.getElementById(id).style.display="block");
+}else{alert("لا توجد نتيجة لهذا الاسم");}}
+</script>
+</body></html>
